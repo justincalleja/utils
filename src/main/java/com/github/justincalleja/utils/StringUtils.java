@@ -1,4 +1,4 @@
-package com.justincalleja.utils;
+package com.github.justincalleja.utils;
 
 import java.util.Arrays;
 import java.util.Collection;
