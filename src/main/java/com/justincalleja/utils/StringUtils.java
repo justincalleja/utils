@@ -1,5 +1,6 @@
 package com.justincalleja.utils;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -8,6 +9,10 @@ public class StringUtils {
 
 	public static boolean isEmpty(final CharSequence cs) {
 		return cs == null || cs.length() == 0;
+	}
+	
+	public static String join(String[] strArray, String separator) {
+		return StringUtils.join(Arrays.asList(strArray), separator);
 	}
 
 	public static <T> String join(List<T> l, String separator) {
@@ -49,6 +54,17 @@ public class StringUtils {
 				return str;
 			}
 		}
+	}
+	
+	public static String padLeft(String s, int limit, char padding) {
+		if(s == null) return null;
+		int rest = limit - s.length();
+		StringBuilder builder = new StringBuilder();
+		while(rest > 0) {
+			builder.append(padding);
+			rest--;
+		} 
+		return builder.append(s).toString();
 	}
 
 }
